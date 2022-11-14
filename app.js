@@ -8,21 +8,21 @@ const wordsToFind = [
     'giraffe'
 ] //Array collection of secrets words
 
-let lifes = 5;
-let inputLetterUser = '';
+let lifes = 5; //User lifes
+let inputLetterUser = ''; //words joined by user
 let successLetters = []; //Corrects letters array
-let previouslyLetters = []; //Previously joined array
+let previouslyLetters = []; //Previously joined array - Las letras ingresadas por el usuario previamente se ingresaran acá
 
 //HTML 
-const buttonSEND = document.querySelector('#buttonShow')
-const fieldCapture = document.querySelector('#field')
+const buttonSEND = document.querySelector('#buttonShow') //Con este botón el usuario envía la letra a validar por nuestra lógica
+const fieldCapture = document.querySelector('#field') //Espacio donde el usuario escribirá
 const livesText = document.querySelector('#lives')
-livesText.innerHTML = lifes
+livesText.innerHTML = lifes //We show user lifes in the screen
 
 const randomWordCatch = RandomWord() //Secret word
-const randomWordCatchSplit = randomWordCatch.split('') //Secret word array
+const randomWordCatchSplit = randomWordCatch.split('') //Secret word array - Convertimos nuestro string de la palabra secreta en un array
 
-console.log(randomWordCatch)
+console.log('Palabra secreta a encontrar : ' + randomWordCatch)
 
 buttonSEND.addEventListener('click', () => {
     if (AnLetter(fieldCapture.value)) {
